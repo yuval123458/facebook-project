@@ -1,0 +1,26 @@
+.menu-sidebar,
+.contacts-sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  overflow-y: auto;
+}
+
+.menu-sidebar {
+  left: 0;
+  width: 25%; /* Adjust as needed */
+}
+
+.contacts-sidebar {
+  right: 0;
+  width: 25%; /* Adjust as needed */
+}
+
+/* Adjust the main content margin to prevent overlap */
+@media (min-width: 768px) {
+  /* Adjusts for Bootstrap's MD breakpoint */
+  .main-content {
+    margin-left: 25%;
+    margin-right: 25%;
+  }
+}

@@ -1,0 +1,87 @@
+.login-container {
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin-left: 170px;
+  margin-bottom: 250px !important;
+}
+.container-flex {
+  display: flex;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box; /* Ensures padding does not affect width */
+}
+
+button {
+  background-color: #1877f2;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #165eab;
+}
+
+.sign-up-label {
+  margin-top: 20px;
+}
+.welcome-message {
+  font-family: "lobster", cursive;
+  flex: 0 1 auto;
+  margin-left: 420px;
+  color: #1877f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  margin-bottom: 320px;
+}
+
+.welcome-message h1 {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-message p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  max-width: 400px;
+  line-height: 1.5;
+  color: black;
+}
+.danger {
+  color: red;
+}
