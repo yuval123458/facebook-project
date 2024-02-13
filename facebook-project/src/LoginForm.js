@@ -19,7 +19,7 @@ function LoginForm({ handleLogin }) {
     if (!user) {
       setAlert("Incorrect email address.");
     }
-    if (user.password != password) {
+    if (user.password !== password) {
       setAlert("Incorrect password.");
     }
     const newUser = { email, password };

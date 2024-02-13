@@ -5,11 +5,11 @@ import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 import { users } from "./db";
 
-function SignUpForm() {
+function SignUpForm({ handleLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [Verpassword, setVerPassword] = useState("");
-  const [Username, setUsername] = useState("");
+  const [username, setUsername] = useState("");
   const [File, setFile] = useState(null);
   const [Alert, setAlert] = useState(null);
   const navigate = useNavigate();
@@ -17,7 +17,7 @@ function SignUpForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (password != Verpassword) {
+    if (password !== Verpassword) {
       setEmail("");
       setPassword("");
       setVerPassword("");
@@ -25,7 +25,9 @@ function SignUpForm() {
       setFile(null);
       setAlert("password doesn't match, please try again.");
     }
-    const userExists = users.map((user) => (users.email = email));
+    let userExists = users.map((user) => users.email === email);
+    userExists = userExists[0];
+    console.log(userExists);
 
     if (userExists) {
       setEmail("");
@@ -34,14 +36,25 @@ function SignUpForm() {
       setUsername("");
       setFile(null);
       setAlert("a user with this email already exists in the system.");
+      return;
     }
-    if (Username.length < 8) {
+    if (username.length < 8) {
       setEmail("");
       setPassword("");
       setVerPassword("");
       setUsername("");
       setFile(null);
       setAlert("username has to be atleast 8 characters long");
+      return;
+    }
+    if (password.length < 8) {
+      setEmail("");
+      setPassword("");
+      setVerPassword("");
+      setUsername("");
+      setFile(null);
+      setAlert("password has to be atleast 8 characters long");
+      return;
     }
     if (!File) {
       setEmail("");
@@ -50,14 +63,15 @@ function SignUpForm() {
       setUsername("");
       setFile(null);
       setAlert("please add a profile picture.");
+      return;
     }
-    users.push({ Username, email, password });
-    navigate("/login");
+    const user = { username, email, password, File };
+    handleLogin(user);
+    navigate("/feed");
   };
 
   const handleFileChange = (e) => {
-    console.log(e.target.files[0]);
-    // setFile(e.target.File[0]);
+    setFile(e.target.files[0]);
   };
 
   const onLoginHandler = () => {
@@ -74,7 +88,7 @@ function SignUpForm() {
             <input
               type="text"
               id="username"
-              value={Username}
+              value={username}
               onChange={(e) => setUsername(e.target.value)}
               placeholder="Username"
               required
@@ -113,14 +127,18 @@ function SignUpForm() {
             />
             {Alert && <label className="danger">{Alert}</label>}
           </div>
-          <div className="form-group">
+          {/* <div className="form-group">
             <label htmlFor="profilePicture">Profile Picture</label>
             <input
               type="file"
               id="profilePicture"
               onChange={handleFileChange}
             />
-          </div>
+          </div> */}
+          <Form.Group className="mb-3" controlId="formFile">
+            <Form.Label>Add profile picture</Form.Label>
+            <Form.Control onChange={handleFileChange} type="file" />
+          </Form.Group>
           <label className="sign-up-label">
             Already have an account ?{" "}
             <span className="lead" onClick={onLoginHandler}>
