@@ -11,6 +11,12 @@
 }
 .container-flex {
   display: flex;
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url("https://media.istockphoto.com/id/1265003122/vector/cloud-background-sky-cartoon-pattern-abstract-blue-heaven-with-layers-for-wallpaper-white.jpg?s=612x612&w=0&k=20&c=YLzJuBA3BW_64ky8P8JO29iqzONuqLgEAZifLuSi1V8=")
+    no-repeat center center fixed;
+  background-size: cover;
 }
 
 .login-form {

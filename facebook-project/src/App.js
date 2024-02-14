@@ -4,27 +4,32 @@ import LoginForm from "./LoginForm";
 import SignUpForm from "./SignUpForm";
 import Feed from "./Feed";
 import { useState } from "react";
+import ProtectedRoute from "./ProtectedRoute";
 
 function App() {
   const [user, setUser] = useState(null);
 
-  const handleLogin = (user) => {
+  const handleSignUp = (user) => {
     setUser(user);
-    console.log(user);
   };
+
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route
-            path="/login"
-            element={<LoginForm handleLogin={handleLogin} />}
-          />
+          <Route path="/login" element={<LoginForm user={user} />} />
           <Route
             path="/sign-up"
-            element={<SignUpForm handleLogin={handleLogin} />}
+            element={<SignUpForm handleSignUp={handleSignUp} />}
           />
-          <Route path="/feed" element={<Feed user={user} />} />
+          <Route
+            path="/feed"
+            element={
+              <ProtectedRoute user={user}>
+                <Feed user={user} />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </div>
     </BrowserRouter>

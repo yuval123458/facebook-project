@@ -8,19 +8,56 @@
 
 .menu-sidebar {
   left: 0;
-  width: 25%; /* Adjust as needed */
+  width: 25%;
 }
 
 .contacts-sidebar {
   right: 0;
-  width: 25%; /* Adjust as needed */
+  width: 25%;
 }
 
-/* Adjust the main content margin to prevent overlap */
 @media (min-width: 768px) {
-  /* Adjusts for Bootstrap's MD breakpoint */
   .main-content {
     margin-left: 25%;
     margin-right: 25%;
   }
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+.card {
+  background-color: #f8f9fa;
+}
+
+[data-theme="dark"] {
+  --background-color: #343a40 !important;
+  --text-color: #fff !important;
+  --card-background-color: #495057 !important;
+}
+
+body[data-theme="dark"] {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .card {
+  background-color: var(--card-background-color) !important;
+}
+
+[data-theme="dark"] {
+  --background-color: #343a40 !important;
+  --text-color: #4e0909 !important;
+  --card-background-color: #495057 !important;
+}
+
+body[data-theme="dark"] {
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+
+[data-theme="dark"] .card {
+  background-color: var(--card-background-color) !important;
 }

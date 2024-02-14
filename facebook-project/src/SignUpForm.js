@@ -5,7 +5,7 @@ import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
 import { users } from "./db";
 
-function SignUpForm({ handleLogin }) {
+function SignUpForm({ handleSignUp }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [Verpassword, setVerPassword] = useState("");
@@ -66,8 +66,8 @@ function SignUpForm({ handleLogin }) {
       return;
     }
     const user = { username, email, password, File };
-    handleLogin(user);
-    navigate("/feed");
+    handleSignUp(user);
+    navigate("/login");
   };
 
   const handleFileChange = (e) => {
