@@ -17,11 +17,15 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route path="/login" element={<LoginForm user={user} />} />
+          <Route
+            path="/"
+            element={<SignUpForm handleSignUp={handleSignUp} />}
+          />
           <Route
             path="/sign-up"
             element={<SignUpForm handleSignUp={handleSignUp} />}
           />
+          <Route path="/login" element={<LoginForm user={user} />} />
           <Route
             path="/feed"
             element={
