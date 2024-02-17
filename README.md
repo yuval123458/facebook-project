@@ -1,5 +1,7 @@
 # facebook-project-WEB
 
+## created by: Yuval Deutsch and Adi Yaakov
+
 # Setup and download
 
 ## to start using the app, please download the zip folder
