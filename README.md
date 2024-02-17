@@ -26,4 +26,4 @@
 
 ## on the lefrt hand side of the screen.
 
-### link to th repo's address: https://github.com/yuval123458/facebook-project/
+### link to the repo's address: https://github.com/yuval123458/facebook-project/
