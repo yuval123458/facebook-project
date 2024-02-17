@@ -1,7 +1,5 @@
 # facebook-project-WEB
 
-# facebook-project-WEB
-
 # Setup and download
 
 ## to start using the app, please download the zip folder
