@@ -1,6 +1,6 @@
 # facebook-project-WEB
 
-## created by: Yuval Deutsch and Adi Yacov
+## created by: Yuval Deutsch
 
 # Setup and download
 
